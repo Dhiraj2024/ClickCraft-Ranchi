@@ -7,10 +7,11 @@ export const WHATSAPP_NUMBER = 'YOUR_WHATSAPP_NUMBER'
 export const WHATSAPP_DEFAULT_MESSAGE =
   'Hello ClickCraft Ranchi, mujhe website banwani hai. Please details share karein.'
 
-export const callLink = `tel:${PHONE_NUMBER}`
+export const callLink = `tel:${9092375766}`
+
 
 export const whatsappLink = (message = WHATSAPP_DEFAULT_MESSAGE) =>
-  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
+  `https://wa.me/${90923757}?text=${encodeURIComponent(message)}`
 
 export const projectEnquiryLink = (projectName) =>
   whatsappLink(

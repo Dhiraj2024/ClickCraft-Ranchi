@@ -14,17 +14,17 @@ export const projects = [
     name: 'Smart Billing App',
     description:
       'Easy billing application for shops with product management, quantity selection and thermal printer support.',
-    price: '₹2,999',
+    price: '₹6,999',
     technologies: ['React Native', 'Expo'],
     image: '/images/img2.png',
     demoUrl: null,
   },
   {
     id: 3,
-    name: 'Cycle Booking Website',
+    name: 'Food Booking Website',
     description:
       'Online cycle booking platform with booking management and user-friendly interface.',
-    price: '₹3,499',
+    price: '₹9,499',
     technologies: ['MERN Stack'],
     image: '/images/img3.png',
     demoUrl: null,
@@ -34,7 +34,7 @@ export const projects = [
     name: 'Room Booking Website',
     description:
       'Property and room listing platform with images, booking enquiry and admin management.',
-    price: '₹4,999',
+    price: '₹10,999',
     technologies: ['MERN Stack'],
     image: '/images/img4.png',
     demoUrl: null,

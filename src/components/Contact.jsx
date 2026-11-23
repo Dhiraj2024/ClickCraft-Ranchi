@@ -1,4 +1,5 @@
 import { Phone, MessageCircle, Smartphone, Globe } from 'lucide-react'
+import { Mail } from "lucide-react";
 import { callLink, whatsappLink } from '../config/contact'
 
 export default function Contact() {
@@ -28,6 +29,14 @@ export default function Contact() {
             <Phone className="h-5 w-5 text-electric-600" />
             Call Now
           </a>
+           <a
+            className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-white px-8 py-4 text-sm font-semibold text-navy-900 shadow-lg transition-all hover:-translate-y-0.5 hover:shadow-xl"
+          >
+            <w className="h-5 w-5 text-electric-600" />
+            skp2242008@gmail
+          </a>
+
+
           <a
             href={whatsappLink()}
             target="_blank"

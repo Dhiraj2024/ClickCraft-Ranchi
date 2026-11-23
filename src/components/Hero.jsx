@@ -33,11 +33,11 @@ export default function Hero() {
               href="#projects"
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-navy-900 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-navy-900/20 transition-all hover:bg-navy-800 hover:shadow-xl hover:shadow-navy-900/25"
             >
-              View My Work
+              Trust On My Work
               <ArrowRight className="h-4 w-4" />
             </a>
             <a
-              href={callLink}
+              href={8}
               className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-navy-200 bg-white px-7 py-3.5 text-sm font-semibold text-navy-900 transition-all hover:border-electric-400 hover:bg-electric-50"
             >
               <Phone className="h-4 w-4" />
@@ -46,7 +46,7 @@ export default function Hero() {
           </div>
 
           <p className="mt-6 text-sm font-medium text-slate-500">
-            Websites Starting at <span className="font-bold text-navy-900">₹2,999</span>
+            Websites Starting at <span className="font-bold text-navy-900">₹3,999</span>
           </p>
         </div>
 
