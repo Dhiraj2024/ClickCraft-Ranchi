@@ -1,0 +1,54 @@
+├── /.git/
+├── .gitignore
+├── /.snapshots/
+│  ├── config.json
+│  ├── readme.md
+│  └── sponsors.md
+├── /dist/
+│  ├── /assets/
+│  │  ├── index-D6mPqD7o.css
+│  │  └── index-KJmNSAu5.js
+│  ├── favicon.svg
+│  ├── /images/
+│  │  ├── img1.png
+│  │  ├── img2.png
+│  │  ├── img3.png
+│  │  ├── img4.png
+│  │  └── profile.png
+│  └── index.html
+├── index.html
+├── /node_modules/
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── /public/
+│  ├── favicon.svg
+│  ├── /images/
+│  │  ├── img1.png
+│  │  ├── img2.png
+│  │  ├── img3.png
+│  │  ├── img4.png
+│  │  └── profile.png
+├── /src/
+│  ├── App.jsx
+│  ├── /components/
+│  │  ├── About.jsx
+│  │  ├── Contact.jsx
+│  │  ├── FAQ.jsx
+│  │  ├── Footer.jsx
+│  │  ├── Hero.jsx
+│  │  ├── HowItWorks.jsx
+│  │  ├── Navbar.jsx
+│  │  ├── Pricing.jsx
+│  │  ├── ProjectCard.jsx
+│  │  ├── Projects.jsx
+│  │  ├── Services.jsx
+│  │  └── WhyChooseUs.jsx
+│  ├── /config/
+│  │  └── contact.js
+│  ├── /data/
+│  │  └── projects.js
+│  ├── index.css
+│  └── main.jsx
+├── tailwind.config.js
+└── vite.config.js
