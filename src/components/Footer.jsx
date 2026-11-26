@@ -1,5 +1,5 @@
-import { Code as Code2, Github, Linkedin, Phone, MessageCircle } from 'lucide-react'
-import { callLink, whatsappLink, socialLinks } from '../config/contact'
+import { Code as Code2, Github, Linkedin, Mail } from 'lucide-react'
+import { socialLinks } from '../config/contact'
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -56,20 +56,11 @@ export default function Footer() {
             </div>
             <div className="flex items-center gap-2">
               <a
-                href={callLink}
-                aria-label="Call now"
+                href="mailto:skp2242008@gmail.com"
+                aria-label="Email"
                 className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-600 transition-all hover:border-electric-600 hover:bg-electric-600 hover:text-white"
               >
-                <Phone className="h-4 w-4" />
-              </a>
-              <a
-                href={whatsappLink()}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="WhatsApp"
-                className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-600 transition-all hover:border-emerald-500 hover:bg-emerald-500 hover:text-white"
-              >
-                <MessageCircle className="h-4 w-4" />
+                <Mail className="h-4 w-4" />
               </a>
             </div>
           </div>

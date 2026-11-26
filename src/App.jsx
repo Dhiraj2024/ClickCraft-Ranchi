@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import Disclaimer from './components/Disclaimer'
 import Projects from './components/Projects'
 import Services from './components/Services'
 import WhyChooseUs from './components/WhyChooseUs'
@@ -16,6 +17,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <Disclaimer />
         <Projects />
         <Services />
         <WhyChooseUs />

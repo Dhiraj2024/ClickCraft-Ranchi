@@ -1,5 +1,4 @@
-import { ArrowRight, Phone, BadgeCheck, Sparkles } from 'lucide-react'
-import { callLink } from '../config/contact'
+import { ArrowRight, BadgeCheck, Sparkles } from 'lucide-react'
 
 export default function Hero() {
   return (
@@ -37,11 +36,10 @@ export default function Hero() {
               <ArrowRight className="h-4 w-4" />
             </a>
             <a
-              href={8}
+              href="#contact"
               className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-navy-200 bg-white px-7 py-3.5 text-sm font-semibold text-navy-900 transition-all hover:border-electric-400 hover:bg-electric-50"
             >
-              <Phone className="h-4 w-4" />
-              Call Now
+              Get Free Quote
             </a>
           </div>
 

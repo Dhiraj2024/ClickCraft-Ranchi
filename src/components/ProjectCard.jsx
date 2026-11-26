@@ -1,5 +1,4 @@
-import { MessageCircle, ExternalLink, Eye, IndianRupee } from 'lucide-react'
-import { projectEnquiryLink } from '../config/contact'
+import { ExternalLink, Eye, IndianRupee } from 'lucide-react'
 
 export default function ProjectCard({ project }) {
   const { name, description, price, technologies, image, demoUrl } = project
@@ -52,13 +51,10 @@ export default function ProjectCard({ project }) {
             {demoUrl ? 'Live Demo' : 'View Details'}
           </button>
           <a
-            href={projectEnquiryLink(name)}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`Enquire about ${name} on WhatsApp`}
-            className="inline-flex items-center justify-center gap-1.5 rounded-lg border-2 border-emerald-500 bg-emerald-50 px-3.5 py-2.5 text-xs font-semibold text-emerald-700 transition-colors hover:bg-emerald-500 hover:text-white"
+            href="#contact"
+            aria-label={`Enquire about ${name}`}
+            className="inline-flex items-center justify-center gap-1.5 rounded-lg border-2 border-electric-500 bg-electric-50 px-3.5 py-2.5 text-xs font-semibold text-electric-700 transition-colors hover:bg-electric-500 hover:text-white"
           >
-            <MessageCircle className="h-3.5 w-3.5" />
             Enquire
           </a>
         </div>

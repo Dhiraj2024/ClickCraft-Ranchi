@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Code as Code2, Menu, X, Phone } from 'lucide-react'
-import { callLink } from '../config/contact'
+import { Code as Code2, Menu, X } from 'lucide-react'
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -46,11 +45,10 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href={callLink}
+            href="#contact"
             className="ml-2 inline-flex items-center gap-2 rounded-xl bg-electric-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-electric-600/25 transition-all hover:bg-electric-700 hover:shadow-lg hover:shadow-electric-600/30"
           >
-            <Phone className="h-4 w-4" />
-            Call Now
+            Get a Quote
           </a>
         </div>
 
@@ -78,12 +76,11 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href={callLink}
+            href="#contact"
             onClick={() => setOpen(false)}
             className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-electric-600 px-5 py-3 text-sm font-semibold text-white shadow-md transition-colors hover:bg-electric-700"
           >
-            <Phone className="h-4 w-4" />
-            Call Now
+            Get a Quote
           </a>
         </div>
       )}

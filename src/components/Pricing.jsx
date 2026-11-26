@@ -1,5 +1,4 @@
-import { Check, MessageCircle } from 'lucide-react'
-import { whatsappLink } from '../config/contact'
+import { Check } from 'lucide-react'
 
 const plans = [
   {
@@ -81,16 +80,13 @@ export default function Pricing() {
                 ))}
               </ul>
               <a
-                href={whatsappLink(`Hello ClickCraft Ranchi, mujhe ${plan.name} ke baare mein details chahiye. Please share karein.`)}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#contact"
                 className={`mt-8 inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold transition-all ${
                   plan.featured
                     ? 'bg-electric-600 text-white shadow-lg shadow-electric-600/30 hover:bg-electric-500'
                     : 'border-2 border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white'
                 }`}
               >
-                <MessageCircle className="h-4 w-4" />
                 Contact for Price
               </a>
             </div>
