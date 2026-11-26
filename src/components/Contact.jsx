@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { Send, CheckCircle, AlertCircle, Loader2, Globe } from 'lucide-react'
-import { supabase } from '../lib/supabase'
+import { Send, CheckCircle, Mail, Globe } from 'lucide-react'
+import { CONTACT_EMAIL } from '../config/contact'
 
 const projectTypes = [
   'Business Website',
@@ -25,41 +25,30 @@ const inputClasses =
 
 export default function Contact() {
   const [form, setForm] = useState(initialForm)
-  const [status, setStatus] = useState('idle')
-  const [errorMessage, setErrorMessage] = useState('')
+  const [sent, setSent] = useState(false)
 
   const update = (field) => (e) => {
     setForm((f) => ({ ...f, [field]: e.target.value }))
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
-    if (status === 'loading') return
-    setStatus('loading')
-    setErrorMessage('')
 
-    try {
-      const apiUrl = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-enquiry`
-      const res = await fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(form),
-      })
-      const data = await res.json().catch(() => null)
-      if (!res.ok) {
-        throw new Error(data?.error || 'Request failed. Please try again.')
-      }
-      setForm(initialForm)
-      setStatus('success')
-    } catch (err) {
-      setErrorMessage(
-        err?.message ? 'Request failed. Please try again.' : 'Request failed. Please try again.'
-      )
-      setStatus('error')
-    }
+    const subject = `New Website Enquiry from ${form.name} (${form.budget})`
+    const body = [
+      `Name: ${form.name}`,
+      `Email: ${form.email}`,
+      `Project Type: ${form.project_type}`,
+      `Features: ${form.features}`,
+      `Description: ${form.description || '-'}`,
+      `Budget: ${form.budget}`,
+    ].join('\n')
+
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`
+
+    setSent(true)
   }
 
   return (
@@ -84,18 +73,19 @@ export default function Contact() {
           </p>
         </div>
 
-        {status === 'success' ? (
+        {sent ? (
           <div className="mx-auto mt-10 max-w-xl rounded-2xl border border-emerald-400/30 bg-emerald-500/10 p-8 text-center">
             <CheckCircle className="mx-auto h-12 w-12 text-emerald-400" />
             <h3 className="mt-4 font-display text-xl font-semibold text-white">
-              Enquiry Bhej Di Gayi!
+              Aapka Email App Khul Gaya!
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-slate-300">
-              Dhanyavaad! Aapki details email kar di gayi hain. Hum 24 ghante ke andar aapko reply karenge.
+              Aapki details email mein bhar chuki hain. Bas "Send" dabayein — aapki
+              enquiry hum tak pahunch jayegi.
             </p>
             <button
               type="button"
-              onClick={() => setStatus('idle')}
+              onClick={() => setSent(false)}
               className="mt-6 inline-flex items-center justify-center rounded-xl bg-white px-6 py-2.5 text-sm font-semibold text-navy-900 transition-colors hover:bg-slate-100"
             >
               Ek aur enquiry bhejein
@@ -204,33 +194,17 @@ export default function Contact() {
               </div>
             </div>
 
-            {status === 'error' && (
-              <div className="mt-5 flex items-center gap-2.5 rounded-xl border border-red-400/30 bg-red-500/10 px-4 py-3 text-sm text-red-200">
-                <AlertCircle className="h-4 w-4 flex-none" />
-                {errorMessage}
-              </div>
-            )}
-
             <button
               type="submit"
-              disabled={status === 'loading'}
-              className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-electric-600 px-8 py-4 text-sm font-semibold text-white shadow-lg shadow-electric-600/30 transition-all hover:-translate-y-0.5 hover:bg-electric-500 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
+              className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-electric-600 px-8 py-4 text-sm font-semibold text-white shadow-lg shadow-electric-600/30 transition-all hover:-translate-y-0.5 hover:bg-electric-500"
             >
-              {status === 'loading' ? (
-                <>
-                  <Loader2 className="h-5 w-5 animate-spin" />
-                  Bheja Ja Raha Hai...
-                </>
-              ) : (
-                <>
-                  <Send className="h-5 w-5" />
-                  Enquiry Bhejein
-                </>
-              )}
+              <Send className="h-5 w-5" />
+              Enquiry Bhejein
             </button>
 
-            <p className="mt-4 text-center text-xs text-slate-400">
-              Form bharne ke baad aapki details seedha humein email par pahunch jayengi.
+            <p className="mt-4 flex items-center justify-center gap-2 text-center text-xs text-slate-400">
+              <Mail className="h-3.5 w-3.5" />
+              Form bharne ke baad aapka email app khulega — details ke saath seedha humein email karein.
             </p>
           </form>
         )}
